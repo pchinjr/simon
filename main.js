@@ -1,6 +1,5 @@
 console.log('praise cage')
 
-
 let sequence = []
 let humanSequence = []
 let level = 0
@@ -9,6 +8,18 @@ const startButton = document.querySelector('.js-start')
 const info = document.querySelector('.js-info')
 const heading = document.querySelector('.js-heading')
 const titleContainer = document.querySelector('.js-container')
+
+
+function resetGame(text) {
+  alert(text)
+  sequence = []
+  humanSequence = []
+  level = 0
+  startButton.classList.remove('hidden')
+  heading.textContent = 'Simon Game'
+  info.classList.add('hidden')
+  tileContainer.classList.add('unclickable')
+}
 
 function humanTurn(level) {
   titleContainer.classList.remove('unclickable')
@@ -67,7 +78,17 @@ function handleClick(tile) {
 
   const remainingTaps = sequence.length - humanSequence.length
 
+  if(humanSequence[index] !== sequence[index]) {
+    resetGame('Oops! Game over, you pressed the wrong tile')
+    return;
+  }
+
   if (humanSequence.length === sequence.length) {
+    if(humanSequence.length === 20) {
+      resetGame('Congrats! You completed all the levels')
+      return
+    }
+
     humanSequence = []
     info.textContent = 'Success! Keep Going!'
     setTimeout(() => {
