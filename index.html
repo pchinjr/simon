@@ -5,14 +5,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Freshman Simon Game Tutorial</title>
+  <title>Simon Vibe</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <main class="game">
     <header>
-      <h1 class="heading js-heading">Simon Game</h1>
+      <h1 class="heading js-heading">Simon Vibe</h1>
     </header>
 
     <section class="tile-container js-container unclickable">
@@ -23,7 +23,10 @@
     </section>
 
     <footer class="info-section">
-      <button class="start-button js-start">Start</button>
+      <button id="connect-toy">Connect Toy</button>
+      <button id="vibe">Vibrate</button>
+      <button id="stop">Stop Vibrate</button>
+      <button class="start-button js-start">Start Game</button>
       <span class="info js-info hidden"></span>
     </footer>
   </main>
@@ -34,6 +37,7 @@
     <audio src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3" data-sound="blue"></audio>
     <audio src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3" data-sound="yellow"></audio>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/buttplug@1.0.12/dist/web/buttplug.min.js"></script>
   <script src="main.js"></script>
 </body>
 
